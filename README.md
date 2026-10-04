@@ -1,2 +1,2 @@
-# tech-evaluation-zynax
-fork this repo, make some changes and submit the link. Simple
+# Technical Evaluation Zynax
+Fork this repository, make any changes and submit a pull request. Simple.
