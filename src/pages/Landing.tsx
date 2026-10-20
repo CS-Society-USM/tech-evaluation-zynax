@@ -172,7 +172,7 @@ export function Landing() {
               <em>Space for what matters.</em>
             </h2>
             <p>
-              Less organizing your tools.
+              Less organizing your tools.{" "}
               <br />
               More getting your thoughts down.
             </p>

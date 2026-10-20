@@ -228,7 +228,7 @@ em {
 }
 .hero {
   display: grid;
-  grid-template-columns: 1.02fr 1fr;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
   align-items: center;
   gap: 24px;
   padding-top: 62px;
@@ -312,6 +312,7 @@ em {
 }
 .hero-art {
   position: relative;
+  min-width: 0;
   min-height: 430px;
   padding: 30px 17px 25px 12px;
 }
@@ -1704,7 +1705,7 @@ dialog::backdrop {
   .hero {
     padding-top: 35px;
     padding-bottom: 60px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 50px;
   }
   .hero-copy {

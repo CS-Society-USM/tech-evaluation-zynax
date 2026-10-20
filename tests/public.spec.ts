@@ -8,11 +8,10 @@ test("landing page is responsive, accessible, and routes to signup", async ({
   await expect(
     page.getByRole("heading", { name: "A little room for your thoughts." }),
   ).toBeVisible();
+  await page.evaluate(() => document.fonts.ready);
   expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= window.innerWidth,
-    ),
-  ).toBe(true);
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(page.viewportSize()!.width);
   const scan = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
     .analyze();

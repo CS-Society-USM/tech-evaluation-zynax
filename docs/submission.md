@@ -23,6 +23,7 @@ The PR is open for the society's review. It has not been merged.
 - Production build and TypeScript checks passed.
 - 10 unit tests passed.
 - 6 desktop/mobile public browser tests passed, including automated WCAG A/AA checks.
+- On 21 October 2026, corrected the mobile landing illustration's grid sizing and verified that the page stays within the actual device viewport after fonts load. All 6 public browser tests passed again; the landing screenshots were refreshed.
 - Desktop and mobile live registration → create → edit → search → reload → delete → logout → login flows passed.
 - 18 public HTTP API authorization/constraint checks passed using two independent users.
 - Transactional SQL RLS checks passed, with fixtures rolled back.
