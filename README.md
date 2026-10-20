@@ -2,6 +2,8 @@
 
 **A little room for your thoughts.** A responsive full-stack notes app for the USM Computer Science Society technical evaluation.
 
+[Live app](https://stillnote-usm.vercel.app/) · [Public repository](https://github.com/TiunChinFa/tech-evaluation-zynax) · [Evaluation pull request #9](https://github.com/CS-Society-USM/tech-evaluation-zynax/pull/9)
+
 Built by **Tiun Chin Fa**. Developed with AI assistance; implementation and verification details are documented below.
 
 ![Stillnote landing page](docs/screenshots/landing-desktop.png)
@@ -90,6 +92,8 @@ The code supports email confirmation and password recovery. For a production ser
 For this evaluation, the owner explicitly approved immediate email/password signup without email confirmation. Passwords and RLS remain enforced, but email ownership is not verified. Password recovery is hidden because no public SMTP sender is configured; set `VITE_EMAIL_DELIVERY_ENABLED=true` only after verifying SMTP delivery. The signup page clearly tells users to keep their passwords safe.
 
 The final evaluation-specific configuration and verified URLs are recorded in [`docs/submission.md`](docs/submission.md). Account data is stored by Supabase; “private” means access control, **not** end-to-end encryption.
+
+The Supabase database security checks have no RLS findings. Its Auth advisor flags leaked-password detection as disabled; the dashboard restricts that feature to Pro plans. This submission remains on the approved Free plan. See [password protection details](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection).
 
 ## Tests
 
