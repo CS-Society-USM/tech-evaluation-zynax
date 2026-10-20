@@ -1,0 +1,142 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.todo-app {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+    .todo-app h2 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .input-row input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+        .input-row input:focus {
+            border-color: #2a5298;
+        }
+
+    .input-row button {
+        padding: 12px 20px;
+        background-color: #2a5298;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .input-row button:hover {
+            background-color: #1e3c72;
+        }
+
+/* list Container */
+ul {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* base styling for task item rows */
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+    li:hover {
+        background: #f1f1f1;
+    }
+
+    /* custom Unchecked Icon */
+    li::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        background-image: url('unchecked.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    /* custom Checked Icon */
+    li.completed::before {
+        background-image: url('checked.png');
+    }
+
+    /* completed task text styling */
+    li.completed .task-text {
+        text-decoration: line-through;
+        color: #888;
+    }
+
+.task-text {
+    flex: 1;
+}
+
+/* delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+    .delete-btn:hover {
+        color: #cc0000;
+    }
+
+.footer {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #666;
+    text-align: right;
+}
