@@ -87,6 +87,8 @@ Keep anonymous sign-ins disabled. Use a minimum password length of 8.
 
 The code supports email confirmation and password recovery. For a production service, configure custom SMTP and keep email confirmation enabled. Supabase's built-in email sender only delivers to project-team addresses and is unsuitable for public signup/recovery. See [Supabase SMTP documentation](https://supabase.com/docs/guides/auth/auth-smtp).
 
+For this evaluation, the owner explicitly approved immediate email/password signup without email confirmation. Passwords and RLS remain enforced, but email ownership is not verified. Password recovery is hidden because no public SMTP sender is configured; set `VITE_EMAIL_DELIVERY_ENABLED=true` only after verifying SMTP delivery. The signup page clearly tells users to keep their passwords safe.
+
 The final evaluation-specific configuration and verified URLs are recorded in [`docs/submission.md`](docs/submission.md). Account data is stored by Supabase; “private” means access control, **not** end-to-end encryption.
 
 ## Tests
