@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papan Pemuka — NotaKita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">NotaKita</a>
+    <button id="logoutButton" type="button">Log keluar</button>
+  </header>
+
+  <main>
+    <section>
+      <p id="userEmail"></p>
+      <h1>Papan pemuka</h1>
+      <p>Tulis nota baharu atau buka nota untuk mengeditnya.</p>
+
+      <form id="noteForm">
+        <input id="noteId" type="hidden">
+
+        <label for="noteTitle">Tajuk</label><br>
+        <input id="noteTitle" type="text" maxlength="100" required><br>
+
+        <label for="noteContent">Kandungan</label><br>
+        <textarea id="noteContent" rows="5" required></textarea><br>
+
+        <button id="saveNoteButton" type="submit">Simpan nota</button>
+        <button id="cancelEditButton" type="button" hidden>Batal edit</button>
+      </form>
+
+      <p id="notesMessage" role="status"></p>
+
+      <h2>Nota saya</h2>
+      <div id="notesList"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
