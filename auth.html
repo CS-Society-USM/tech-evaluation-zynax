@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akaun — NotaKita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">NotaKita</a>
+  </header>
+
+  <main>
+    <section>
+      <h1>Akaun NotaKita</h1>
+
+      <h2>Daftar akaun</h2>
+      <form id="signupForm">
+        <label for="signupEmail">Emel</label><br>
+        <input id="signupEmail" type="email" required><br>
+
+        <label for="signupPassword">Kata laluan</label><br>
+        <input id="signupPassword" type="password" minlength="6" required><br>
+
+        <button type="submit">Daftar</button>
+      </form>
+
+      <h2>Log masuk</h2>
+      <form id="loginForm">
+        <label for="loginEmail">Emel</label><br>
+        <input id="loginEmail" type="email" required><br>
+
+        <label for="loginPassword">Kata laluan</label><br>
+        <input id="loginPassword" type="password" required><br>
+
+        <button type="submit">Log masuk</button>
+      </form>
+
+      <p id="authMessage"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
