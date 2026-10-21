@@ -1,0 +1,49 @@
+{
+  "name": "notes-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n web,api -c cyan,green \"npm:dev:web\" \"npm:dev:server\"",
+    "dev:web": "vite",
+    "dev:server": "nodemon server/src/index.js",
+    "build": "vite build",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start": "node server/src/index.js",
+    "test": "cross-env DATABASE_URL=file:./test.db prisma db push --skip-generate && cross-env DATABASE_URL=file:./test.db vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^6.19.0",
+    "supertest": "^7.3.1",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^1.61.0",
+    "multer": "^2.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4",
+    "zod": "^4.6.7"
+  }
+}

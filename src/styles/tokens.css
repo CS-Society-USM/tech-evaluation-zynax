@@ -1,0 +1,25 @@
+:root {
+  --ink: #141414;
+  --ink-soft: #5c5c5c;
+  --ink-faint: #8f8f8f;
+  --paper: #f3f2ef;
+  --paper-deep: #e8e6e1;
+  --white: #ffffff;
+  --orange: #f25c12;
+  --orange-deep: #c2410c;
+  --orange-soft: #ffe3d2;
+  --tile-peach: #ff8a3d;
+  --tile-sand: #f7c548;
+  --tile-lilac: #efbdf5;
+  --tile-sage: #a9d977;
+  --tile-sky: #a3c8f7;
+  --cream: #f8f0cf;
+  --line: rgba(20, 20, 20, 0.1);
+  --shadow-soft: 0 12px 32px rgba(20, 20, 20, 0.08);
+  --shadow: 0 30px 80px rgba(20, 20, 20, 0.14);
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --font-display: "Urbanist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Urbanist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
