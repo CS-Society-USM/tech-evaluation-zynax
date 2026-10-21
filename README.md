@@ -1,2 +1,2 @@
 # Technical Evaluation Zynax
-Fork this repository, make any changes and submit a pull request. Simple.
+hi I am Erick Chong, ready of computer science society!
