@@ -19,7 +19,7 @@
 .sidebar__link--starred svg, .sidebar__recent .sidebar__star { color: #d99a00; }
 .sidebar__recent .sidebar__star { fill: currentColor; }
 .sidebar__group--recent { flex: 1; align-content: start; }
-.sidebar__account { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 14px; background: rgba(255, 255, 255, 0.7); }
+.sidebar__account { display: flex; margin-top: auto; align-items: center; gap: 10px; padding: 10px; border-radius: 14px; background: rgba(255, 255, 255, 0.7); }
 .sidebar__who { flex: 1; min-width: 0; }
 .sidebar__who strong, .sidebar__who small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sidebar__who strong { font-size: 0.88rem; }
