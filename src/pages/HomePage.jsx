@@ -1,11 +1,19 @@
-import { ArrowRight, Check, LockKeyhole, PencilLine, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, LockKeyhole, PencilLine, Search, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Brand } from '../components/shared/Brand.jsx'
+import { PhoneMockup } from '../components/shared/PhoneMockup.jsx'
 
-const benefits = [
-  { icon: PencilLine, number: '01', title: 'Write without friction', text: 'A focused editor that gets out of your way, so the thought stays louder than the tool.' },
-  { icon: LockKeyhole, number: '02', title: 'Private by design', text: 'Every note belongs to you. Server-side ownership checks keep other accounts out.' },
-  { icon: Sparkles, number: '03', title: 'Find your signal', text: 'Search across your workspace and bring the right idea back into focus in seconds.' },
+const features = [
+  { icon: PencilLine, tone: 'peach', title: 'Write without friction', text: 'A calm, paper-like editor that keeps the thought louder than the tool.' },
+  { icon: LockKeyhole, tone: 'ink', title: 'Private by design', text: 'Every note belongs to you. Server-side ownership checks keep other accounts out.' },
+  { icon: Search, tone: 'lilac', title: 'Find it in seconds', text: 'Search titles and content instantly, then filter by today or this week.' },
+  { icon: Sparkles, tone: 'sand', title: 'Colour that sticks', text: 'Each note gets its own tone, so your ideas are easy to spot at a glance.' },
+]
+
+const steps = [
+  { number: '01', title: 'Create your space', text: 'Sign up in seconds. No setup, no clutter.' },
+  { number: '02', title: 'Capture anything', text: 'Plans, lectures, lists, and the 2 a.m. ideas.' },
+  { number: '03', title: 'Come back to it', text: 'Edit, search, and tidy whenever you like.' },
 ]
 
 /**
@@ -21,54 +29,71 @@ export function HomePage() {
       <header className="site-header container">
         <Brand />
         <nav className="site-nav" aria-label="Main navigation">
-          <a href="#features">Why Mora</a>
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
           <Link to="/login">Log in</Link>
-          <Link className="nav-cta" to="/register">Start writing <ArrowRight size={16} /></Link>
+          <Link className="nav-cta" to="/register">Get started <ArrowRight size={16} /></Link>
         </nav>
       </header>
 
       <section className="hero container">
         <div className="hero__copy">
-          <p className="eyebrow"><span /> A calmer place to think</p>
-          <h1>Your thoughts,<br /><em>finally at home.</em></h1>
-          <p className="hero__lead">Mora is a private writing space for unfinished ideas, daily observations, and everything worth remembering.</p>
+          <p className="eyebrow"><Sparkles size={14} /> Your private notebook</p>
+          <h1>Let’s make your notes <span className="hero__highlight">feel personal.</span></h1>
+          <p className="hero__lead">Mora is a colourful, private place for plans, lectures, lists, and every idea worth keeping — beautifully organised and only ever yours.</p>
           <div className="hero__actions">
-            <Link className="button button--primary button--large" to="/register"><span>Open your notebook</span><ArrowRight size={18} /></Link>
-            <span className="hero__promise"><Check size={15} /> Free to begin. Yours to keep.</span>
+            <Link className="button button--accent button--large" to="/register"><span>Get started — it’s free</span><ArrowRight size={18} /></Link>
+            <Link className="button button--ghost button--large" to="/login"><span>I have an account</span></Link>
           </div>
+          <ul className="hero__proof">
+            <li><Check size={15} /> No credit card</li>
+            <li><Check size={15} /> Private by default</li>
+            <li><Check size={15} /> Works on any device</li>
+          </ul>
         </div>
-        <div className="hero-art" aria-label="Preview of the Mora notes experience">
-          <div className="orbit orbit--one" /><div className="orbit orbit--two" />
-          <article className="paper-note paper-note--back"><span>BOOKS TO FIND</span><p>The Creative Act<br />On Writing Well</p></article>
-          <article className="paper-note paper-note--main">
-            <div className="paper-note__meta"><span>OCT 21</span><span>3 MIN READ</span></div>
-            <h2>An idea about<br />slow mornings</h2>
-            <p>Leave a little room before the world arrives. Coffee, an open window, and nowhere to be for a while.</p>
-            <span className="paper-note__scribble">remember this ↗</span>
-          </article>
-          <span className="floating-tag">private space</span>
+        <div className="hero-art">
+          <div className="hero-art__glow" />
+          <PhoneMockup variant="dark" className="hero-art__phone hero-art__phone--back" />
+          <PhoneMockup variant="light" className="hero-art__phone hero-art__phone--front" />
+          <span className="hero-sticker hero-sticker--one">✦ just for you</span>
+          <span className="hero-sticker hero-sticker--two"><LockKeyhole size={14} /> private space</span>
         </div>
       </section>
 
-      <section className="manifesto container" id="features">
-        <p className="eyebrow">Less noise. More meaning.</p>
-        <h2>Not another productivity machine.<br /><em>A place to hear yourself think.</em></h2>
-        <div className="benefit-grid">
-          {benefits.map(({ icon: Icon, number, title, text }) => (
-            <article className="benefit-card" key={number}>
-              <div className="benefit-card__top"><span>{number}</span><Icon size={22} /></div>
-              <h3>{title}</h3><p>{text}</p>
+      <section className="features container" id="features">
+        <div className="section-heading">
+          <p className="eyebrow">Why people love Mora</p>
+          <h2>Less noise. More <span>meaning.</span></h2>
+        </div>
+        <div className="feature-grid">
+          {features.map(({ icon: Icon, tone, title, text }) => (
+            <article className={`feature-card feature-card--${tone}`} key={title}>
+              <span className="feature-card__icon"><Icon size={22} /></span>
+              <h3>{title}</h3>
+              <p>{text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="closing-cta">
-        <div className="container closing-cta__inner">
-          <span className="closing-cta__spark">✦</span>
-          <p className="eyebrow">Your next thought is waiting</p>
-          <h2>Make space for it.</h2>
-          <Link className="button button--light button--large" to="/register"><span>Create your space</span><ArrowRight size={18} /></Link>
+      <section className="how container" id="how">
+        <div className="section-heading">
+          <p className="eyebrow">How it works</p>
+          <h2>Three steps to a <span>clearer head.</span></h2>
+        </div>
+        <ol className="steps">
+          {steps.map(({ number, title, text }) => (
+            <li className="step" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="closing-cta container">
+        <div className="closing-cta__inner">
+          <p className="closing-cta__tag">Your next thought is waiting</p>
+          <h2>Start writing today.</h2>
+          <p>Join Mora and give your ideas a home they deserve.</p>
+          <Link className="button button--light button--large" to="/register"><span>Create my space</span><ArrowRight size={18} /></Link>
         </div>
       </section>
 

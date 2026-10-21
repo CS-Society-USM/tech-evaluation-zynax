@@ -15,8 +15,8 @@ export function RegisterPage() {
 
   return (
     <AuthPanel
-      eyebrow="Your space, your words"
-      title="Start with a blank page."
+      eyebrow="Get started"
+      title="Let’s personalise your notes."
       description="Create a private space for the plans, fragments, and bright ideas you want to keep."
       footer={<>Already have an account? <Link to="/login">Log in</Link></>}
     >

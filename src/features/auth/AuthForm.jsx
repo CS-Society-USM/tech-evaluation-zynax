@@ -52,7 +52,7 @@ export function AuthForm({ mode, onSubmit }) {
         required
       />
       {form.error && <p className="form-error" role="alert">{form.error}</p>}
-      <Button type="submit" size="large" isLoading={form.isSubmitting} icon={<ArrowRight size={18} />}>
+      <Button type="submit" variant="accent" size="large" isLoading={form.isSubmitting} icon={<ArrowRight size={18} />}>
         {isRegister ? 'Create my space' : 'Enter my space'}
       </Button>
     </form>

@@ -17,7 +17,8 @@ export function LoginPage() {
     <AuthPanel
       eyebrow="Welcome back"
       title="Pick up where you left off."
-      description="Your notes are waiting—private, organized, and exactly where you put them."
+      description="Your notes are waiting — private, organised, and exactly where you put them."
+      step={2}
       footer={<>New to Mora? <Link to="/register">Create an account</Link></>}
     >
       <AuthForm mode="login" onSubmit={login} />
