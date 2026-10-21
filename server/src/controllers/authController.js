@@ -47,6 +47,6 @@ export function logout(_request, response) {
  * router.get('/me', authenticate, getCurrentUser)
  */
 export async function getCurrentUser(request, response) {
-  const user = await getUserById(request.userId)
+  const user = request.userId ? await getUserById(request.userId) : null
   response.json({ success: true, data: { user } })
 }
