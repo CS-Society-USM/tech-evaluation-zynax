@@ -16,6 +16,7 @@ dist-ssr
 !.env.example
 prisma/*.db
 prisma/*.db-journal
+uploads/
 
 # Editor directories and files
 .vscode/*
@@ -27,3 +28,7 @@ prisma/*.db-journal
 *.njsproj
 *.sln
 *.sw?
+
+# Server-specific deployment notes stay local
+deploy/
+docs/DEPLOYMENT.md

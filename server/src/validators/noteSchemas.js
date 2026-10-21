@@ -10,3 +10,10 @@ export const createNoteSchema = z.object(noteFields)
 
 /** Schema used to validate note update payloads. */
 export const updateNoteSchema = z.object(noteFields)
+
+/** Schema used to star, archive, trash, or restore a note. At least one field is required. */
+export const noteStateSchema = z.object({
+  isStarred: z.boolean().optional(),
+  archived: z.boolean().optional(),
+  trashed: z.boolean().optional(),
+}).strict().refine((value) => Object.keys(value).length > 0, { message: 'Provide at least one state change.' })
