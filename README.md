@@ -1,2 +1,2 @@
 # Technical Evaluation Zynax
-Fork this repository, make any changes and submit a pull request. Simple.
+Hello, I am Kean You, ready for CS Society!
