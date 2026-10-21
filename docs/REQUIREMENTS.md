@@ -69,7 +69,11 @@ Deleting a user should delete that user's notes through a database relationship 
 
 | Variable | Purpose |
 | --- | --- |
-| `DATABASE_URL` | PostgreSQL connection string |
+| `DATABASE_URL` | SQLite file connection string |
 | `JWT_SECRET` | Token signing secret |
 | `CLIENT_ORIGIN` | Allowed frontend origin for CORS |
 | `PORT` | API server port |
+
+## Implementation status
+
+All five assessment levels are implemented. Automated API tests verify that a second authenticated account cannot list, update, or delete another user's note.

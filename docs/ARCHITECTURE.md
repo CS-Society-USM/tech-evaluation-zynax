@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | Client | React + Vite | Responsive interface, routing, forms, and API consumption |
 | API | Node.js + Express | Authentication, validation, authorization, and note operations |
-| Database | PostgreSQL + Prisma | Durable user and note storage, schema migrations, and relations |
+| Database | SQLite + Prisma | Durable zero-configuration storage, schema management, and relations |
 | Authentication | JWT + HTTP-only cookie | Secure server-managed login sessions |
 
 ## Repository structure
@@ -14,6 +14,7 @@
 ```text
 .
 ├── docs/                  Project requirements and technical decisions
+├── prisma/                Database schema and local SQLite database
 ├── public/                Static public assets
 ├── server/
 │   ├── src/
@@ -38,7 +39,9 @@
 
 ## API boundaries
 
-The planned API will expose versioned routes under `/api/v1`. Authentication middleware will derive the current user from a signed token. Every note query and mutation will include the authenticated user's identifier so ownership remains enforced at the server and database query level.
+The API exposes versioned routes under `/api/v1`. Authentication middleware derives the current user from a signed HTTP-only cookie. Every note query and mutation includes the authenticated user's identifier, so ownership remains enforced at the server and database query level.
+
+SQLite was selected for a portable technical-test submission: evaluators can run the complete data layer with one command and no external database service. Prisma keeps the persistence boundary isolated, allowing a later PostgreSQL migration with minimal service-layer changes.
 
 ## Dependency direction
 

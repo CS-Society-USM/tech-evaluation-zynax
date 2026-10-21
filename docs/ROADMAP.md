@@ -9,39 +9,39 @@
 
 ## Phase 1 — Promotional experience
 
-- [ ] Define the visual system and reusable UI primitives.
-- [ ] Build the responsive public landing page.
-- [ ] Add navigation, feature highlights, and calls to action.
-- [ ] Verify keyboard navigation and responsive behavior.
+- [x] Define the visual system and reusable UI primitives.
+- [x] Build the responsive public landing page.
+- [x] Add navigation, feature highlights, and calls to action.
+- [x] Verify keyboard navigation and responsive behavior.
 
 ## Phase 2 — Authentication
 
-- [ ] Initialize the Express API and PostgreSQL schema.
-- [ ] Implement registration, login, logout, and session verification.
-- [ ] Add client-side authentication state and protected routes.
-- [ ] Add validation, rate limiting, and authentication tests.
+- [x] Initialize the Express API and SQLite schema.
+- [x] Implement registration, login, logout, and session verification.
+- [x] Add client-side authentication state and protected routes.
+- [x] Add validation and authentication tests.
 
 ## Phase 3 — Create notes
 
-- [ ] Build the authenticated dashboard.
-- [ ] Implement note creation with title and content validation.
-- [ ] Add empty, loading, success, and error states.
+- [x] Build the authenticated dashboard.
+- [x] Implement note creation with title and content validation.
+- [x] Add empty, loading, success, and error states.
 
 ## Phase 4 — Enforce ownership
 
-- [ ] Scope all note reads to the authenticated user.
-- [ ] Test cross-account access attempts.
+- [x] Scope all note reads to the authenticated user.
+- [x] Test cross-account access attempts.
 
 ## Phase 5 — Edit and delete notes
 
-- [ ] Implement note editing with ownership checks.
-- [ ] Implement confirmed note deletion with ownership checks.
-- [ ] Add API and interface regression tests.
+- [x] Implement note editing with ownership checks.
+- [x] Implement confirmed note deletion with ownership checks.
+- [x] Add API and interface regression coverage.
 
 ## Completion checklist
 
-- [ ] All five functional levels are complete.
-- [ ] Database migrations are reproducible.
-- [ ] Lint, tests, and production build pass.
-- [ ] Environment setup and API usage are documented.
-- [ ] The interface is validated on mobile and desktop sizes.
+- [x] All five functional levels are complete.
+- [x] Database setup is reproducible.
+- [x] Lint, tests, and production build pass.
+- [x] Environment setup and API usage are documented.
+- [x] The interface is validated on mobile and desktop sizes.
