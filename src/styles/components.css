@@ -9,7 +9,7 @@
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 0 19px; border: 1px solid transparent; border-radius: 999px; cursor: pointer; font-size: 0.84rem; font-weight: 750; transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; }
 .button:hover:not(:disabled) { transform: translateY(-2px); }
 .button:disabled { cursor: wait; opacity: 0.68; }
-.button--primary { color: white; background: var(--coral); box-shadow: 0 10px 24px rgba(237, 104, 79, 0.24); }
+.button--primary { color: white; background: var(--coral); box-shadow: 0 10px 24px rgba(198, 75, 56, 0.24); }
 .button--primary:hover:not(:disabled) { background: var(--coral-dark); box-shadow: 0 14px 28px rgba(201, 71, 52, 0.28); }
 .button--light { color: var(--ink); background: var(--white); }
 .button--ghost { border-color: var(--line); background: transparent; box-shadow: none; }
