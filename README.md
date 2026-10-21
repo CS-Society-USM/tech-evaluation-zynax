@@ -6,7 +6,7 @@ A full-stack notes application created for the USM Computer Science Society tech
 
 Mora is a responsive full-stack notes application. Guests can explore the promotional website, create an account, and securely manage a private collection of notes.
 
-**Live demo:** https://mora.15-235-211-72.sslip.io
+**Live demo:** https://mora.asista.id
 
 ## Completed features
 
