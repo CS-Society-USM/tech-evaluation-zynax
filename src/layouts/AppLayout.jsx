@@ -1,42 +1,25 @@
-import { LogOut, Plus } from 'lucide-react'
-import { Outlet } from 'react-router-dom'
-import { Brand } from '../components/shared/Brand.jsx'
-import { Button } from '../components/shared/Button.jsx'
+import { LayoutGrid, LogOut, Plus } from 'lucide-react'
+import { Link, Outlet } from 'react-router-dom'
 import { useAppLayoutActions } from '../hooks/useAppLayoutActions.js'
 
 /**
- * Dashboard shell with account identity, primary navigation, and logout action.
+ * Authenticated shell: renders the active page and a floating action dock on small screens.
  *
  * @returns {JSX.Element} Authenticated application layout.
  * @example
  * <Route element={<AppLayout />}><Route path="dashboard" /></Route>
  */
 export function AppLayout() {
-  const { user, handleLogout, requestNewNote } = useAppLayoutActions()
+  const { handleLogout, requestNewNote } = useAppLayoutActions()
 
   return (
     <div className="app-shell">
-      <aside className="app-sidebar">
-        <Brand compact />
-        <div className="app-sidebar__body">
-          <p className="eyebrow">Workspace</p>
-          <nav aria-label="Workspace navigation">
-            <a className="sidebar-link sidebar-link--active" href="/dashboard">All notes <span>●</span></a>
-          </nav>
-        </div>
-        <div className="account-card">
-          <span className="avatar" aria-hidden="true">{user.name.slice(0, 1).toUpperCase()}</span>
-          <span><strong>{user.name}</strong><small>{user.email}</small></span>
-          <button className="icon-button" type="button" onClick={handleLogout} aria-label="Log out"><LogOut size={17} /></button>
-        </div>
-      </aside>
-      <div className="app-main">
-        <header className="mobile-header">
-          <Brand compact />
-          <Button size="small" onClick={requestNewNote} icon={<Plus size={16} />}>New</Button>
-        </header>
-        <Outlet />
-      </div>
+      <Outlet />
+      <nav className="mobile-dock" aria-label="Quick navigation">
+        <Link className="mobile-dock__item is-active" to="/dashboard" aria-label="All notes"><LayoutGrid size={20} /></Link>
+        <button className="mobile-dock__fab" type="button" onClick={requestNewNote} aria-label="New note"><Plus size={26} /></button>
+        <button className="mobile-dock__item" type="button" onClick={handleLogout} aria-label="Log out"><LogOut size={20} /></button>
+      </nav>
     </div>
   )
 }

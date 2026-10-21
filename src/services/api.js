@@ -30,7 +30,7 @@ export class ApiError extends Error {
 export async function request(path, options = {}) {
   const response = await fetch(path, {
     credentials: 'include',
-    headers: { 'Content-Type': 'application/json', ...options.headers },
+    headers: options.body instanceof FormData ? options.headers : { 'Content-Type': 'application/json', ...options.headers },
     ...options,
   })
 
@@ -82,7 +82,45 @@ export function updateNote(noteId, input) {
   return request(`/api/v1/notes/${noteId}`, { method: 'PUT', body: JSON.stringify(input) })
 }
 
-/** Deletes one note owned by the active user. */
+/** Permanently deletes one note owned by the active user. */
 export function deleteNote(noteId) {
   return request(`/api/v1/notes/${noteId}`, { method: 'DELETE' })
+}
+
+/**
+ * Stars, archives, trashes, or restores one note owned by the active user.
+ *
+ * @param {string} noteId Note identifier.
+ * @param {{isStarred?: boolean, archived?: boolean, trashed?: boolean}} state State changes.
+ * @returns {Promise<{note: object}>} Updated note.
+ * @example
+ * await setNoteState(note.id, { trashed: true })
+ */
+export function setNoteState(noteId, state) {
+  return request(`/api/v1/notes/${noteId}`, { method: 'PATCH', body: JSON.stringify(state) })
+}
+
+/** Permanently deletes every trashed note owned by the active user. */
+export function emptyTrash() {
+  return request('/api/v1/notes/trash', { method: 'DELETE' })
+}
+
+/**
+ * Uploads one image and attaches it to a note.
+ *
+ * @param {string} noteId Note identifier.
+ * @param {File} file PNG, JPEG, GIF, or WebP image up to 5 MB.
+ * @returns {Promise<{image: {id: string, url: string}}>} Stored image reference.
+ * @example
+ * await uploadNoteImage(note.id, file)
+ */
+export function uploadNoteImage(noteId, file) {
+  const body = new FormData()
+  body.append('image', file)
+  return request(`/api/v1/notes/${noteId}/images`, { method: 'POST', body })
+}
+
+/** Removes one image from a note owned by the active user. */
+export function deleteNoteImage(noteId, imageId) {
+  return request(`/api/v1/notes/${noteId}/images/${imageId}`, { method: 'DELETE' })
 }
